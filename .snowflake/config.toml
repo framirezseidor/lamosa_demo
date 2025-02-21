@@ -1,0 +1,6 @@
+default_connection_name = "xpb58818"
+
+[cli.logs]
+save_logs = true
+path = "C:\\Users\\SEIDOR\\.snowflake\\logs"
+level = "info"
