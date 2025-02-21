@@ -1,1 +1,0 @@
-alter task testing_with_git.test.mytask resume;
