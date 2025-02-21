@@ -20,7 +20,7 @@ jobs:
       - name: Install snowflake-cli
         uses: Snowflake-Labs/snowflake-cli-action@v1.5
         with:
-          cli-version: "latest"
+          cli-version: "latest" 
           default-config-file-path: "config/config.toml"
       
       - name: Check Version and Verify Connection
