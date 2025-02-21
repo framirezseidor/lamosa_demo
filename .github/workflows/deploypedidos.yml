@@ -25,7 +25,12 @@ jobs:
 
       - name: Configure Snowflake CLI
         run: |
-          snow connection add --connection-name  "default" --account ${{ secrets.SNOWFLAKE_ACCOUNT }}  --username ${{ secrets.SNOWFLAKE_USER }}  --role ACCOUNTADMIN --warehouse COMPUTE_WH  --password ${{ secrets.SNOWFLAKE_PASSWORD }}             --database  none --schema none --host none --port none --region none --authenticator none --private-key none --token-file-path none                     
+          snow connection add --connection-name  "default" \
+          --account ${{ secrets.SNOWFLAKE_ACCOUNT }}  \
+          --username ${{ secrets.SNOWFLAKE_USER }}  \
+          --role ACCOUNTADMIN --warehouse COMPUTE_WH  \
+          --password ${{ secrets.SNOWFLAKE_PASSWORD }}             \
+                            
 
       - name: Fetch repository changes
         run: snow git fetch lamosa_demo 
