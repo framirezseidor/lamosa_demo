@@ -25,7 +25,7 @@ jobs:
           default-config-file-path: ".snowflake/config.toml"
 
       - name: Fetch repository changes
-        run: snow git fetch lamosa_demo --connection "xpb58818"
+        run: snow git fetch lamosa_demo --account ${{secrets.SNOWFLAKE_ACCOUNT}} --user ${{ secrets.SNOWFLAKE_USER }} --password ${{ secrets.SNOWFLAKE_PASSWORD }}
 
       - name: Deploy scripts to preprod environment
         run: snow git execute @lamosa_demo/main/scripts/* \
