@@ -1,0 +1,5 @@
+default_connection_name = "xpb58818"
+
+[connections]
+[connections.xpb58818]
+authenticator="SNOWFLAKE_JWT"
