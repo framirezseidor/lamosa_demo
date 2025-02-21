@@ -23,7 +23,8 @@ jobs:
 
       - name: Configure Snowflake CLI
         run: |
-          snow connection add "default"
+          snow connection add 
+          --connection-name  "default"
           --account-name ${{ secrets.SNOWFLAKE_ACCOUNT }} \
           --username ${{ secrets.SNOWFLAKE_USER }} \
           --password-env-var SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD \
