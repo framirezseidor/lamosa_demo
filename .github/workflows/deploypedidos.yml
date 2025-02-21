@@ -31,8 +31,8 @@ jobs:
               snow connection test
               echo "Using branch $GITHUB_REF_NAME"
       
-              - name: Fetch repository changes
-              run: snow git fetch lamosa_demo 
+      - name: Fetch repository changes
+        run: snow git fetch lamosa_demo 
       
       - name: Deploy scripts to preprod environment
         run: snow git execute @lamosa_demo/main/scripts/* \
