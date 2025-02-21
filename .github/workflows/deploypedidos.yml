@@ -25,7 +25,8 @@ jobs:
 
       - name: Configure Snowflake CLI
         run: |
-          snow connection add --connection-name  "default" --account ${{ secrets.SNOWFLAKE_ACCOUNT }} --username ${{ secrets.SNOWFLAKE_USER }}  --role ACCOUNTADMIN --warehouse COMPUTE_WH
+          snow connection add --connection-name  "default" --account ${{ secrets.SNOWFLAKE_ACCOUNT }} --username ${{ secrets.SNOWFLAKE_USER }}  --role ACCOUNTADMIN --warehouse COMPUTE_WH 
+          $echo ${{ secrets.SNOWFLAKE_PASSWORD }}
           
           
 
