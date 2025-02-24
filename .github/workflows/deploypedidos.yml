@@ -27,6 +27,10 @@ jobs:
           account = "${{ secrets.SNOWFLAKE_ACCOUNT }}"
           user = "${{ secrets.SNOWFLAKE_USER }}"
           password = "${{ secrets.SNOWFLAKE_PASSWORD }}"
+          database = PEDIDOS
+          schema = PUBLIC
+          warehouse = COMPUTE_WH
+          ROLE = ACCOUNTADMIN
 
                     
 
