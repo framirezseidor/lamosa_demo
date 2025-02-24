@@ -31,8 +31,6 @@ jobs:
           schema = "PUBLIC"
           warehouse = "COMPUTE_WH"
 
-                    
-
 
       - name: Verify Snowflake config file
         run: ls -la .snowflake && cat .snowflake/config.toml
