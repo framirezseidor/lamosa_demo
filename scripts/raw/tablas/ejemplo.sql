@@ -1,4 +1,4 @@
-CREATE or alter TABLE testing_with_git.test.ejemplo (
+CREATE or alter TABLE pedidos.public.ejemplo (
     amount NUMBER,
     nombre varchar(100)
     );

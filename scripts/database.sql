@@ -1,2 +1,2 @@
 use role accountadmin;
-CREATE DATABASE PEDIDOS;
+CREATE DATABASE TEST;

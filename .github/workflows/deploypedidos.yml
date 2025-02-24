@@ -19,14 +19,16 @@ jobs:
 
       - name: Set Snowflake Credentials
         run: |
-          mkdir -p .snowflake
-          echo "default_connection_name = "xpb58818""
-          echo "[connections]""
-          echo "[connections.xpb58818]" > .snowflake/config.toml
-          echo "account = \"${{ secrets.SNOWFLAKE_ACCOUNT }}\"" >> .snowflake/config.toml
-          echo "user = \"${{ secrets.SNOWFLAKE_USER }}\"" >> .snowflake/config.toml
-          echo "password = \"${{ secrets.SNOWFLAKE_PASSWORD }}\"" >> .snowflake/config.toml
-          echo " " >> .snowflake/config.toml
+          mkdir -p ~/.snowflake
+          cat <<EOF > ~/.snowflake/config.toml
+          echo default_connection_name = "xpb58818"
+          echo [connections]
+          [connections.xpb58818]
+          account = "${{ secrets.SNOW_ACCOUNT }}"
+          user = "${{ secrets.SNOW_USER }}"
+          password = "${{ secrets.SNOW_PASSWORD }}"
+          EOF          
+
 
       - name: Verify Snowflake config file
         run: ls -la .snowflake && cat .snowflake/config.toml
