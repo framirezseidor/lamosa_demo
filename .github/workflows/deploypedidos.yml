@@ -25,7 +25,7 @@ jobs:
           echo "account = \"${{ secrets.SNOWFLAKE_ACCOUNT }}\"" >> .snowflake/config.toml
           echo "user = \"${{ secrets.SNOWFLAKE_USER }}\"" >> .snowflake/config.toml
           echo "password = \"${{ secrets.SNOWFLAKE_PASSWORD }}\"" >> .snowflake/config.toml
-
+          echo " " >> .snowflake/config.toml
 
       - name: Verify Snowflake config file
         run: ls -la .snowflake && cat .snowflake/config.toml
