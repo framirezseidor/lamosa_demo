@@ -24,9 +24,9 @@ jobs:
           echo default_connection_name = "xpb58818"
           echo [connections]
           [connections.xpb58818]
-          account = "${{ secrets.SNOW_ACCOUNT }}"
-          user = "${{ secrets.SNOW_USER }}"
-          password = "${{ secrets.SNOW_PASSWORD }}"
+          account = "${{ secrets.SNOWFLAKE_ACCOUNT }}"
+          user = "${{ secrets.SNOWFLAKE_USER }}"
+          password = "${{ secrets.SNOWFLAKE_PASSWORD }}"
           EOF          
 
 
