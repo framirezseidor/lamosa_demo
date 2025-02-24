@@ -17,11 +17,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Verify Snowflake config file
+        run: ls -la ~/.snowflake && cat ~/.snowflake/config.toml
+
       - name: Install snowflake-cli
         uses: Snowflake-Labs/snowflake-cli-action@v1.5
         with:
           cli-version: "latest" 
-          #default-config-file-path: "~/.snowflake/config.toml"
+          default-config-file-path: "/home/runner/.snowflake/config.toml"
       
       - name: Check Version and Verify Connection
         env:
