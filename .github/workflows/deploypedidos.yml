@@ -19,6 +19,7 @@ jobs:
 
       - name: Set Snowflake Credentials
         run: |
+          mkdir -p .snowflake
           echo "default_connection_name = "xpb58818""
           echo "[connections]""
           echo "[connections.xpb58818]" > .snowflake/config.toml
