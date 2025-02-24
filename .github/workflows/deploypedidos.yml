@@ -21,8 +21,8 @@ jobs:
         run: |
           mkdir -p .snowflake
           cat <<EOF > .snowflake/config.toml
-          echo default_connection_name = "xpb58818"
-          echo [connections]
+          default_connection_name = "xpb58818"
+          [connections]
           [connections.xpb58818]
           account = "${{ secrets.SNOWFLAKE_ACCOUNT }}"
           user = "${{ secrets.SNOWFLAKE_USER }}"
