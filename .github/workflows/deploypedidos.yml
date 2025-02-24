@@ -17,6 +17,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set Snowflake Credentials
+        run: |
+          echo "default_connection_name = "xpb58818""
+          echo "[connections]""
+          echo "[connections.xpb58818]" > ".snowflake/config.toml
+          echo "account = \"${{ secrets.SNOWFLAKE_ACCOUNT }}\"" >> ~/.snowflake/config.toml
+          echo "user = \"${{ secrets.SNOWFLAKE_USER }}\"" >> ~/.snowflake/config.toml
+          echo "password = \"${{ secrets.SNOWFLAKE_PASSWORD }}\"" >> ~/.snowflake/config.toml
+
+
       - name: Verify Snowflake config file
         run: ls -la .snowflake && cat .snowflake/config.toml
 

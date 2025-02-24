@@ -1,7 +1,0 @@
-default_connection_name = "xpb58818"
-
-[connections]
-[connections.xpb58818]
-account = "xpb58818"
-user = "framirezl"
-password = ${{ secrets.SNOWFLAKE_PASSWORD }}
