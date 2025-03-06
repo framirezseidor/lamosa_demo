@@ -25,8 +25,8 @@ jobs:
           default_connection_name = "xpb58818"
           [connections]
           [connections.xpb58818]
-          account = "${{ env.SNOWFLAKE_ACCOUNT }}"
-          user = "${{ env.SNOWFLAKE_USER }}"
+          account = "${{ var.SNOWFLAKE_ACCOUNT }}"
+          user = "${{ var.SNOWFLAKE_USER }}"
           password = "${{ secrets.SNOWFLAKE_PASSWORD }}"
           database = "PEDIDOS"
           schema = "PUBLIC"
