@@ -1,4 +1,4 @@
-name: Deploy scripts to preprod
+name: Deploy scripts to prod
 
 on:
   pull_request:
@@ -28,7 +28,7 @@ jobs:
           account = "${{ vars.SNOWFLAKE_ACCOUNT }}"
           user = "${{ vars.SNOWFLAKE_USER }}"
           password = "${{ secrets.SNOWFLAKE_PASSWORD }}"
-          database = "PEDIDOS"
+          database = "LAMOSALAKE_PRD"
           schema = "PUBLIC"
           warehouse = "COMPUTE_WH"
 
@@ -52,6 +52,6 @@ jobs:
         run: snow git fetch lamosa_demo
       
       - name: Deploy scripts to prod environment
-        run: snow git execute "@lamosa_demo/branches/main/scripts/raw/tablas/ejemplodepaula.sql" 
+        run: snow git execute "@lamosa_demo/branches/"${{ vars.ambientedeploy }}"/scripts/raw/tablas/*.sql" 
 
      
