@@ -31,5 +31,5 @@ jobs:
         SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
         SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
       run: |
-        schemachange -f ./scripts -a $SNOWFLAKE_ACCOUNT -u $SNOWFLAKE_USER -p $SNOWFLAKE_PASSWORD \
-        -r $SNOWFLAKE_ROLE -w $SNOWFLAKE_WAREHOUSE -d $SNOWFLAKE_DATABASE --verbose
+        schemachange -f ./scripts -p $SNOWFLAKE_PASSWORD 
+        
