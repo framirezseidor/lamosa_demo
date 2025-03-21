@@ -1,0 +1,15 @@
+#same for each env
+config-version: 1
+root-folder: 'scripts'
+modules-folder: null
+snowflake-account: 'XJLIQNC-PGB38908.snowflakecomputing.com' # for example: XXXXX.west-us.azure
+snowflake-warehouse: 'COMPUTE_WH'
+create-change-history-table: false
+autocommit: false
+verbose: true
+
+
+#changed within each env
+snowflake-user: 'framirezl'
+snowflake-role: 'ACCOUNTADMIN'
+change-history-table: 'PEDIDOS.PUBLIC.CHANGE_HISTORY'

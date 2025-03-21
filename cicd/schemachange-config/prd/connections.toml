@@ -1,13 +1,14 @@
-default_connection_name = "xpb58818"
+default_connection_name = "snow"
 
-[xpb58818]
-account = "xpb58818"
+[snow]
+account = "XJLIQNC-PGB38908.snowflakecomputing.com"
 user = "framirezl"
-password = ${{ secrets.SNOWFLAKE_PASSWORD }}
+password = "MaximusdEcimus2025"
 authenticator = "snowflake"
+database = "PEDIDOS"
 SNOWFLAKE_ACCOUNT = "XJLIQNC-PGB38908.snowflakecomputing.com"
 SNOWFLAKE_USER = "framirezl"
 SNOWFLAKE_WAREHOUSE = "COMPUTE_WH"
-SNOWFLAKE_DATABASE = "PRUEBASCHEMACHANGE"
+SNOWFLAKE_DATABASE = "PEDIDOS"
 SNOWFLAKE_SCHEMA = "PUBLIC"
 SNOWFLAKE_ROLE = "ACCOUNTADMIN"

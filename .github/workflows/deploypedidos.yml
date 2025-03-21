@@ -1,11 +1,15 @@
 name: Deploy scripts to prod
 
 on:
-  pull_request_target:
+  pull_request:
+    types:
+      - closed
     branches:
       - development
 
 jobs:
+  if_merged:
+    xxxxxxxxxxx
   deploy:
     runs-on: ubuntu-latest
 
@@ -52,6 +56,6 @@ jobs:
         run: snow git fetch lamosa_demo
       
       - name: Deploy scripts to prod environment
-        run: snow git execute "@lamosa_demo/branches/"${{ vars.ambientedeploy }}"/scripts/raw/tablas/*.sql" 
+        run: snow git execute "@lamosa_demo/branches/development/scripts/raw/tablas/*.sql" 
 
      
