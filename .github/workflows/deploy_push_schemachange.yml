@@ -24,7 +24,7 @@ jobs:
 
     - name: Run schemachange
       env:
-        snowflake_password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+        password: ${{ secrets.SNOWFLAKE_PASSWORD }}
       run: |
         schemachange -f scripts --connections-file-path connections.toml --connection-name snow \
         -c pruebaschemachange.public.CHANGE_HISTORY --create-change-history-table
