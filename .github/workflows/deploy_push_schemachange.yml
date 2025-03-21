@@ -24,19 +24,23 @@ jobs:
 
     - name: Configure Snowflake Credentials
       run: |
-          echo "[snow]" > connections.toml
-          echo "account = \"XJLIQNC-PGB38908\"" >> connections.toml
-          echo "user = \"${{ secrets.SNOWFLAKE_USER }}\"" >> connections.toml
-          echo "password = \"${{ secrets.SNOWFLAKE_PASSWORD }}\"" >> connections.toml
-          echo "role = \"ACCOUNTADMIN\"" >> connections.toml
-          echo "warehouse = \"COMPUTE_WH\"" >> connections.toml
-          echo "database = \"PEDIDOS"" >> connections.toml
-          echo "schema = \"PUBLIC"" >> connections.toml
+          cat <<EOF > ./connections.toml
+          default_connection_name = "snow"
+          [connections]
+          [snow]
+          account = "XJLIQNC-PGB38908"
+          user = "${{ vars.SNOWFLAKE_USER }}"
+          password = "${{ secrets.SNOWFLAKE_PASSWORD }}"
+          database = "PEDIDOS"
+          schema = "PUBLIC"
+          warehouse = "COMPUTE_WH"
+          rol = "ACCOUNTADMIN"
+
 
     - name: Run schemachange
       env:
         $env:SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
       run: |
-        schemachange -f scripts --connections-file-path "." --connection-name snow \
+        schemachange -f scripts --connections-file-path connections.toml --connection-name snow \
         -c pruebaschemachange.public.CHANGE_HISTORY --create-change-history-table
      
