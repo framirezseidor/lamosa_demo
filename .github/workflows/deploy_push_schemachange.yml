@@ -31,5 +31,5 @@ jobs:
         SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
         SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
       run: |
-        schemachange -f ./cicd --connections-file-path ".\schemachange-config\prd\connections.toml" --connection-name snow
+        schemachange -f "cicd" --connections-file-path ".\schemachange-config\prd\connections.toml" --connection-name snow
         
