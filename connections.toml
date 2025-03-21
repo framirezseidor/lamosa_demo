@@ -3,7 +3,6 @@ default_connection_name = "snow"
 [snow]
 account = "XJLIQNC-PGB38908"
 user = "framirezl"
-password = "MaximusdEcimus2025"
 authenticator = "snowflake"
 database = "PEDIDOS"
 SNOWFLAKE_ACCOUNT = "XJLIQNC-PGB38908"

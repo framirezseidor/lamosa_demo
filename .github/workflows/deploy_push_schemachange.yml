@@ -24,13 +24,8 @@ jobs:
 
     - name: Run schemachange
       env:
-        SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-        SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
-        SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-        SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
-        SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
-        SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+        snowflake_password: ${{ secrets.SNOWFLAKE_PASSWORD }}
       run: |
         schemachange -f scripts --connections-file-path connections.toml --connection-name snow \
         -c pruebaschemachange.public.CHANGE_HISTORY --create-change-history-table
-        
+     
