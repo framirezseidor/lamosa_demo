@@ -22,9 +22,20 @@ jobs:
       run: |
         pip install schemachange
 
+    - name: Configure Snowflake Credentials
+      run: |
+          echo "[snow]" > connections.toml
+          echo "account = \"XJLIQNC-PGB38908\"" >> connections.toml
+          echo "user = \"${{ secrets.SNOWFLAKE_USER }}\"" >> connections.toml
+          echo "password = \"${{ secrets.SNOWFLAKE_PASSWORD }}\"" >> connections.toml
+          echo "role = \"ACCOUNTADMIN\"" >> connections.toml
+          echo "warehouse = \"COMPUTE_WH\"" >> connections.toml
+          echo "database = \"PEDIDOS"" >> connections.toml
+          echo "schema = \"PUBLIC"" >> connections.toml
+
     - name: Run schemachange
       env:
-        password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+        $env:SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
       run: |
         schemachange -f scripts --connections-file-path connections.toml --connection-name snow \
         -c pruebaschemachange.public.CHANGE_HISTORY --create-change-history-table
