@@ -1,12 +1,12 @@
 default_connection_name = "snow"
 
 [snow]
-account = "XJLIQNC-PGB38908.snowflakecomputing.com"
+account = "XJLIQNC-PGB38908"
 user = "framirezl"
 password = "MaximusdEcimus2025"
 authenticator = "snowflake"
 database = "PEDIDOS"
-SNOWFLAKE_ACCOUNT = "XJLIQNC-PGB38908.snowflakecomputing.com"
+SNOWFLAKE_ACCOUNT = "XJLIQNC-PGB38908"
 SNOWFLAKE_USER = "framirezl"
 SNOWFLAKE_WAREHOUSE = "COMPUTE_WH"
 SNOWFLAKE_DATABASE = "PEDIDOS"
